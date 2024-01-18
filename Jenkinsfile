@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('SCM Checkout') {
             steps {
-                sh 'rm -rf Sundar@994 || true'  // Remove existing directory if it exists
+                sh 'rm -rf sundar || true'  // Remove existing directory if it exists
                 sh 'git clone https://github.com/Sundarraj9942/nodedemo.git'
                 echo 'test1'
             }
@@ -17,7 +17,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 echo 'test2'
-                sh 'docker build -t raj9942/Sundar@994:latest .'
+                sh 'docker build -t raj9942/sundar:latest .'
             }
         }
 
@@ -34,7 +34,7 @@ pipeline {
 
         stage('Push Image') {
             steps {
-                sh 'docker push raj9942/Sundar@994:latest'
+                sh 'docker push raj9942/sundar:latest'
             }
         }
     }
